@@ -264,3 +264,4 @@ E:\ProjectCV\XTL\razorweb\razorweb\bin\Debug\net8.0\System.ClientModel.dll
 E:\ProjectCV\XTL\razorweb\razorweb\bin\Debug\net8.0\Npgsql.dll
 E:\ProjectCV\XTL\razorweb\razorweb\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 E:\ProjectCV\XTL\razorweb\razorweb\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+E:\ProjectCV\XTL\razorweb\razorweb\obj\Debug\net8.0\razorweb.sourcelink.json
