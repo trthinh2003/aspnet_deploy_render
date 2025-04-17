@@ -17,6 +17,7 @@ namespace razorweb
                 string connectionString = builder.Configuration.GetConnectionString("MyBlogDB")!;
                 //options.UseSqlServer(connectionString);
                 options.UseNpgsql(connectionString);
+                Console.WriteLine($"Connection string: '{connectionString}'");
             });
 
             var app = builder.Build();

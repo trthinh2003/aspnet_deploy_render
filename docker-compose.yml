@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__MyBlogDB=Host=dpg-d0080m9r0fns73e0fabg-a.singapore-postgres.render.com;Port=5432;Username=first_hosting_tecg_user;Password=SBylHebDdxd2mC6QsMCNbYc8CTVT0UB6;Database=RazorWeb;SSL Mode=Require;Trust Server Certificate=true
+    depends_on:
+      - db
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: RazorWeb
+      POSTGRES_USER: first_hosting_tecg_user
+      POSTGRES_PASSWORD: SBylHebDdxd2mC6QsMCNbYc8CTVT0UB6
+    ports:
+      - "5432:5432"
