@@ -1,0 +1,49 @@
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
+
+namespace razorweb.Migrations
+{
+    /// <inheritdoc />
+    public partial class InitDB : Migration
+    {
+        /// <inheritdoc />
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.CreateTable(
+                name: "Articles",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Title = table.Column<string>(type: "nvarchar(100)", maxLength: 255, nullable: false),
+                    CreateAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Content = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Articles", x => x.Id);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Articles",
+                columns: new[] { "Content", "CreateAt", "Title" },
+                values: new object[] { "Content 1", new DateTime(2025, 4, 20), "Title 1" }
+            );
+
+            migrationBuilder.InsertData(
+                table: "Articles",
+                columns: new[] { "Content", "CreateAt", "Title" },
+                values: new object[] { "Content 2", new DateTime(2018, 8, 20), "Title 2" }
+            );
+        }
+
+        /// <inheritdoc />
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropTable(
+                name: "Articles");
+        }
+    }
+}
